@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import minato.kitpvp.main.eventos.InteractOpen;
 import minato.kitpvp.main.eventos.JoinLeave;
+import minato.kitpvp.main.eventos.Jump;
 import minato.kitpvp.main.eventos.SoupEvent;
 import minato.kitpvp.main.habilidades.Stomper;
 
@@ -22,6 +23,7 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new JoinLeave(), this);
 		getServer().getPluginManager().registerEvents(new InteractOpen(), this);
 		getServer().getPluginManager().registerEvents(new SoupEvent(), this);
+		getServer().getPluginManager().registerEvents(new Jump(), this);
 		
 		//Kits
 		getServer().getPluginManager().registerEvents(new Stomper(), this);
