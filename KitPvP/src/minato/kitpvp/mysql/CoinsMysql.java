@@ -10,6 +10,7 @@ public class CoinsMysql {
 	
 	private Connection con;
 	
+	//Abrir Conexão
 	public void abrirConexão() {
 		String user = Main.cf.getString("Coins.Mysql.User");
 		String password = Main.cf.getString("Coins.Mysql.Password");
