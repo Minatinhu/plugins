@@ -18,6 +18,7 @@ public class KitMain {
 	}
 	
 	public void addKit(Player p, KitType kit) {
+		p.getInventory().setArmorContents(null);
 		p.getInventory().clear();
 		switch(kit) {
 		case AJNIN:
@@ -35,6 +36,9 @@ public class KitMain {
 		case NINJA:
 			break;
 		case STOMPER:
+			p.getInventory().setItem(0, new ItemStack(Material.STONE_SWORD));
+			p.getInventory().setBoots(new ItemStack(Material.IRON_BOOTS));
+			kitpvp.put(p, KitType.STOMPER);
 			break;
 		default:
 			break;

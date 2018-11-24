@@ -17,6 +17,7 @@ public class SoupEvent extends KitMain implements Listener {
 		Player p = e.getPlayer();
 		if(e.getItem().getType() == Material.MUSHROOM_SOUP && kitspvp().containsKey(p)) {
 			if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+				e.setCancelled(true);
 				if(p.getHealth() != p.getMaxHealth()) {
 					p.setHealth(7.0d + p.getHealth() > p.getMaxHealth() ? p.getMaxHealth() : 7.0d + p.getHealth());
 				    e.getItem().setType(Material.BOWL);
