@@ -1,5 +1,6 @@
 package minato.kitpvp.main;
 
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import minato.kitpvp.main.eventos.InteractOpen;
@@ -11,6 +12,7 @@ public class Main extends JavaPlugin {
 	
 	public void onEnable() {
 		setInstance(this);
+		newMessage("&2[&cKitPvP] &2Plugin ligado com sucesso!");
 		getServer().getPluginManager().registerEvents(new JoinLeave(), this);
 		getServer().getPluginManager().registerEvents(new InteractOpen(), this);
 	}
@@ -21,6 +23,10 @@ public class Main extends JavaPlugin {
 
 	public static void setInstance(Main instance) {
 		Main.instance = instance;
+	}
+	
+	void newMessage(String Message) {
+		getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', Message));
 	}
 
 }
