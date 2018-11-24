@@ -6,6 +6,8 @@ import java.sql.SQLException;
 
 import minato.kitpvp.main.Main;
 
+//Class to open connection
+
 public class CoinsMysql {
 	
 	private Connection con;
