@@ -5,6 +5,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import minato.kitpvp.main.eventos.InteractOpen;
 import minato.kitpvp.main.eventos.JoinLeave;
+import minato.kitpvp.main.eventos.SoupEvent;
+import minato.kitpvp.main.habilidades.Stomper;
 
 public class Main extends JavaPlugin {
 	
@@ -13,8 +15,13 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		setInstance(this);
 		newMessage("&2[&cKitPvP] &2Plugin ligado com sucesso!");
+		//Events
 		getServer().getPluginManager().registerEvents(new JoinLeave(), this);
 		getServer().getPluginManager().registerEvents(new InteractOpen(), this);
+		getServer().getPluginManager().registerEvents(new SoupEvent(), this);
+		
+		//Kits
+		getServer().getPluginManager().registerEvents(new Stomper(), this);
 	}
 
 	public static Main getInstance() {

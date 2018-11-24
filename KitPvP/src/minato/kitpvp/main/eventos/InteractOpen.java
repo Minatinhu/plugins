@@ -52,6 +52,12 @@ public class InteractOpen extends KitMain implements Listener {
 			case NINJA:
 				break;
 			case STOMPER:
+				ItemStack i2 = new ItemStack(Material.IRON_BOOTS);
+				ItemMeta meta2 = i2.getItemMeta();
+				meta2.setDisplayName("§2Stomper");
+				String[] lore2 = {"§4 - Ao pular encima de um player ele irá receber o dano de queda que você iria receber\n e você irá levar apenas 2 coração de dano de queda."};
+				i2.setItemMeta(meta2);
+				inv.setItem(1, i2);
 				break;
 			default:
 				break;
