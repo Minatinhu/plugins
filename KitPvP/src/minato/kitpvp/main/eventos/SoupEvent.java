@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 import minato.kitpvp.main.kitmain.KitMain;
@@ -22,6 +23,11 @@ public class SoupEvent extends KitMain implements Listener {
 				}
 			}
 		}
+	}
+	
+	@EventHandler
+	public void b(FoodLevelChangeEvent e) {
+		e.setCancelled(true);
 	}
 
 }
