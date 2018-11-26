@@ -31,6 +31,7 @@ public class Main extends JavaPlugin {
 		
 		//Commands
 		getCommand("ping").setExecutor(new Ping());
+		
 	}
 
 	public static Main getInstance() {
