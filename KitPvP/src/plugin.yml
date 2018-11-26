@@ -2,3 +2,5 @@ name: KitPvP
 author: Minatinhu
 version: 1.0
 main: minato.kitpvp.main.Main
+commands:
+  ping:

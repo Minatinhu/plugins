@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import minato.kitpvp.main.comandos.Ping;
 import minato.kitpvp.main.eventos.InteractOpen;
 import minato.kitpvp.main.eventos.JoinLeave;
 import minato.kitpvp.main.eventos.Jump;
@@ -27,6 +28,9 @@ public class Main extends JavaPlugin {
 		
 		//Kits
 		getServer().getPluginManager().registerEvents(new Stomper(), this);
+		
+		//Commands
+		getCommand("ping").setExecutor(new Ping());
 	}
 
 	public static Main getInstance() {
