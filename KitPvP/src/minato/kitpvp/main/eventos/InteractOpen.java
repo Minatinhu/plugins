@@ -71,7 +71,17 @@ public class InteractOpen extends KitMain implements Listener {
 	
 	@EventHandler
 	public void KitSelector(InventoryClickEvent e) {
-		
+		Player p = (Player) e.getWhoClicked();
+		if(e.getClickedInventory().getTitle().equalsIgnoreCase("§2Seus Kits")) {
+			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§3Default") ) {
+				addKit(p, KitType.DEFAULT);
+			}
+			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§2Stomper")) {
+				addKit(p, KitType.STOMPER);
+			}
+			e.setCancelled(true);
+			p.closeInventory();
+		}
 	}
 
 }
