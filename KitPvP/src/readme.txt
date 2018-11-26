@@ -1,1 +1,0 @@
-Direito autoral da RedeGet
