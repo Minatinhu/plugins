@@ -11,6 +11,7 @@ public class Ping implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		// /ping
 		if(cmd.getName().equalsIgnoreCase("ping")) {
 			Player p = (Player) sender;
 			if(args.length == 0) {
