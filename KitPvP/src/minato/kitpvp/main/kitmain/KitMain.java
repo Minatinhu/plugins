@@ -53,7 +53,7 @@ public class KitMain {
 		
 		}
 		for(ItemStack i : p.getInventory().getContents()) {
-			if(i != null) {
+			if(i == null) {
 				p.getInventory().addItem(new ItemStack(Material.MUSHROOM_SOUP));
 			}
 		}
