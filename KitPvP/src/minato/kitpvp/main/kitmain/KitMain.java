@@ -6,6 +6,7 @@ import java.util.Map;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import minato.kitpvp.main.kittype.KitType;
 
@@ -30,6 +31,13 @@ public class KitMain {
 			kitpvp.put(p, KitType.DEFAULT);
 			break;
 		case DILMA:
+			p.getInventory().setItem(0, new ItemStack(Material.STONE_SWORD));
+			ItemStack i = new ItemStack(Material.BLAZE_ROD);
+			ItemMeta meta = i.getItemMeta();
+			meta.setDisplayName("§4Habilidade Dilma");
+			i.setItemMeta(meta);
+			p.getInventory().setItem(1, i);
+			kitpvp.put(p, KitType.DILMA);
 			break;
 		case MELIODAS:
 			break;

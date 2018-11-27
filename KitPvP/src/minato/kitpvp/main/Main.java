@@ -9,6 +9,7 @@ import minato.kitpvp.main.eventos.InteractOpen;
 import minato.kitpvp.main.eventos.JoinLeave;
 import minato.kitpvp.main.eventos.Jump;
 import minato.kitpvp.main.eventos.SoupEvent;
+import minato.kitpvp.main.habilidades.Dilma;
 import minato.kitpvp.main.habilidades.Stomper;
 
 public class Main extends JavaPlugin {
@@ -28,6 +29,7 @@ public class Main extends JavaPlugin {
 		
 		//Kits
 		getServer().getPluginManager().registerEvents(new Stomper(), this);
+		getServer().getPluginManager().registerEvents(new Dilma(), this);
 		
 		//Commands
 		getCommand("ping").setExecutor(new Ping());

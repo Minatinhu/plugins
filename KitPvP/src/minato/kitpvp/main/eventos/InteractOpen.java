@@ -47,6 +47,11 @@ public class InteractOpen extends KitMain implements Listener {
 				inv.setItem(0, i);
 				break;
 			case DILMA:
+				ItemStack i3 = new ItemStack(Material.BLAZE_ROD);
+				ItemMeta meta3 = i3.getItemMeta();
+				meta3.setDisplayName("§3Dilma");
+				i3.setItemMeta(meta3);
+				inv.setItem(2, i3);
 				break;
 			case MELIODAS:
 				break;
@@ -78,6 +83,9 @@ public class InteractOpen extends KitMain implements Listener {
 			}
 			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§2Stomper")) {
 				addKit(p, KitType.STOMPER);
+			}
+			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§3Dilma")) {
+				addKit(p, KitType.DILMA);
 			}
 			e.setCancelled(true);
 			p.closeInventory();
