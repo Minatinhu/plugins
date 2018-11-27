@@ -17,7 +17,7 @@ public class Stomper extends KitMain implements Listener {
 	@EventHandler
 	public void StomperEvent(EntityDamageEvent e) {
 		Player p = (Player) e.getEntity();
-		if(e.getEntityType() == EntityType.PLAYER) {
+		if(e.getEntity() instanceof Player) {
 			if(kitspvp().get(p) == KitType.STOMPER) {
 				for(Entity p2 : p.getNearbyEntities(3, 3, 3)) {
 					Player p21 = (Player) p2;
