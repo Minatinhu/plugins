@@ -15,8 +15,8 @@ public class Jump extends KitMain implements Listener {
 	@EventHandler
 	public void EsponjaEsmeralda(PlayerMoveEvent e) {
 		Player p = e.getPlayer();
-		if(hasKit(p) && p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.SPONGE) {
-			p.setVelocity(new Vector(0.5, 0.5, 05));
+		if(hasKit(p) && e.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.SPONGE) {
+			p.setVelocity(new Vector(p.getLocation().getBlockX(), 5, p.getLocation().getZ()));
 		}
 	}
 
