@@ -19,7 +19,7 @@ public class Dilma extends KitMain implements Listener {
 				//x lados, y altura, z frente e tras
 				Player p2 = (Player) e.getEntity();
 				if(e.getEntity() instanceof Player && hasKit(p2)) {
-					p2.setVelocity(new Vector(0, 0.2, 0.4));
+					p2.setVelocity(new Vector(p.getLocation().getX(), p.getLocation().getY(), 0.4));
 					p2.sendMessage("§4Voce caiu no estoque de vento da Dilma");
 				}
 			}
