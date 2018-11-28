@@ -12,9 +12,9 @@ import minato.kitpvp.main.kittype.KitType;
 
 public class KitMain {
 	
-	private Map<Player, KitType> kitpvp = new HashMap<>();
+	private static Map<Player, KitType> kitpvp = new HashMap<>();
 	
-	public Map<Player, KitType> kitspvp() {
+	public static Map<Player, KitType> kitspvp() {
 		return kitpvp;
 	}
 	
