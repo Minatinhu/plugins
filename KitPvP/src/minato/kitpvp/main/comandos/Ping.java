@@ -16,7 +16,7 @@ public class Ping implements CommandExecutor {
 			Player p = (Player) sender;
 			if(args.length == 0) {
 				int ping = ((CraftPlayer)p).getHandle().ping;
-				p.sendMessage(ChatColor.BLACK + "[" + ChatColor.GREEN + "RedeGet" + ChatColor.BLACK + "]" + ChatColor.RESET + " Sua ping é" + ping);
+				p.sendMessage(ChatColor.BLACK + "[" + ChatColor.GREEN + "RedeGet" + ChatColor.BLACK + "]" + ChatColor.RESET + " Sua ping é " + ping);
 				return false;
 			}
 		}
