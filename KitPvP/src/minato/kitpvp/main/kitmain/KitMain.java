@@ -13,6 +13,11 @@ import minato.kitpvp.main.kittype.KitType;
 public class KitMain {
 	
 	private static Map<Player, KitType> kitpvp = new HashMap<>();
+	private static Map<Player, String> kitnome =  new HashMap<>();
+	
+	public static Map<Player, String> kitsnome() {
+		return kitnome;
+	}
 	
 	public static Map<Player, KitType> kitspvp() {
 		return kitpvp;
@@ -29,6 +34,7 @@ public class KitMain {
 		case DEFAULT:
 			p.getInventory().setItem(0, new ItemStack(Material.STONE_SWORD));
 			kitpvp.put(p, KitType.DEFAULT);
+			kitnome.put(p, "§8Default");
 			break;
 		case DILMA:
 			p.getInventory().setItem(0, new ItemStack(Material.STONE_SWORD));
@@ -38,6 +44,7 @@ public class KitMain {
 			i.setItemMeta(meta);
 			p.getInventory().setItem(1, i);
 			kitpvp.put(p, KitType.DILMA);
+			kitnome.put(p, "§cDilma");
 			break;
 		case MELIODAS:
 			break;
@@ -47,6 +54,7 @@ public class KitMain {
 			p.getInventory().setItem(0, new ItemStack(Material.STONE_SWORD));
 			p.getInventory().setBoots(new ItemStack(Material.IRON_BOOTS));
 			kitpvp.put(p, KitType.STOMPER);
+			kitnome.put(p, "§7Stomper");
 			break;
 		default:
 			break;

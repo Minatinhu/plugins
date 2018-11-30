@@ -9,6 +9,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import minato.kitpvp.main.Main;
 import minato.kitpvp.main.kitmain.KitMain;
 
 public class JoinLeave extends KitMain implements Listener {
@@ -24,6 +25,8 @@ public class JoinLeave extends KitMain implements Listener {
 		meta.setDisplayName(nameKitSelector);
 		i.setItemMeta(meta);
 		p.getInventory().setItem(1, i);
+		//Scoreboard
+		Main.getInstance().s.build(p);
 	}
 	
 	@EventHandler

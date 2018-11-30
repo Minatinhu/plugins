@@ -17,6 +17,7 @@ import minato.kitpvp.main.eventos.Jump;
 import minato.kitpvp.main.eventos.SoupEvent;
 import minato.kitpvp.main.habilidades.Dilma;
 import minato.kitpvp.main.habilidades.Stomper;
+import minato.kitpvp.main.scoreboard.Score;
 
 public class Main extends JavaPlugin {
 
@@ -24,6 +25,7 @@ public class Main extends JavaPlugin {
 	public static FileConfiguration cf;
 	public static File autof = new File(getInstance().getDataFolder(), "automessage.yml");
 	public static FileConfiguration auto = YamlConfiguration.loadConfiguration(autof);
+	public Score s = new Score();
 
 	public void onEnable() {
 		cf = getConfig();
@@ -62,6 +64,9 @@ public class Main extends JavaPlugin {
 
 		// Commands
 		getCommand("ping").setExecutor(new Ping());
+		
+		//Scoreboard
+		s.run();
 
 	}
 
