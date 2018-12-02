@@ -1,5 +1,6 @@
 package minato.kitpvp.main.eventos;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,9 +9,11 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import minato.kitpvp.main.Main;
 import minato.kitpvp.main.kitmain.KitMain;
+import minato.kitpvp.main.scoreboard.Score;
 
 public class JoinLeave extends KitMain implements Listener {
 
@@ -25,9 +28,11 @@ public class JoinLeave extends KitMain implements Listener {
 		meta.setDisplayName(nameKitSelector);
 		i.setItemMeta(meta);
 		p.getInventory().setItem(1, i);
-		//Scoreboard
-		Main.getInstance().s.build(p);
+		kitsnome().put(p, "Nenhum");
+		getSeguencia().put(p, 0);
+		Score.build(p);
 	}
+		
 	
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent e) {
