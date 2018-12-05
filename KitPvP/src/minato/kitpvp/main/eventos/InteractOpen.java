@@ -3,6 +3,7 @@ package minato.kitpvp.main.eventos;
 import java.util.Arrays;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -21,7 +22,7 @@ public class InteractOpen extends KitMain implements Listener {
 
 	@EventHandler
 	public void onInteract(PlayerInteractEvent e) {
-		if (e.getItem().getItemMeta().getDisplayName().equalsIgnoreCase("§cKitSelector")) {
+		if (e.getItem().getItemMeta().getDisplayName().equalsIgnoreCase("§cHabilidades")) {
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				e.setCancelled(true);
 				abrir(e.getPlayer());
@@ -30,7 +31,7 @@ public class InteractOpen extends KitMain implements Listener {
 	}
 
 	private void abrir(Player player) {
-		Inventory inv = Bukkit.createInventory(null, 4*9, "§2Seus Kits");
+		Inventory inv = Bukkit.createInventory(null, 4*9, "§7Habilidades");
 		for(KitType kit : KitType.values()) {
 			switch(kit) {
 			case AJNIN:
@@ -40,8 +41,8 @@ public class InteractOpen extends KitMain implements Listener {
 			case DEFAULT:
 				ItemStack i = new ItemStack(Material.STONE_SWORD);
 				ItemMeta meta = i.getItemMeta();
-				meta.setDisplayName("§3Default");
-				String[] lore = {"Um kit simples para iniciantes"};
+				meta.setDisplayName("§fClássico");
+				String[] lore = {"Uma habilidade simples para iniciantes"};
 				meta.setLore(Arrays.asList(lore));
 				i.setItemMeta(meta);
 				inv.setItem(0, i);
@@ -50,12 +51,14 @@ public class InteractOpen extends KitMain implements Listener {
 				ItemStack i3 = new ItemStack(Material.BLAZE_ROD);
 				ItemMeta meta3 = i3.getItemMeta();
 				meta3.setDisplayName("§3Dilma");
+				String[] lore3 = {"§cEssa habilidade estoca e solta vento, impurrando seu adiversario para longe"};
 				i3.setItemMeta(meta3);
 				inv.setItem(2, i3);
 				break;
 			case MELIODAS:
 				break;
 			case NINJA:
+				ItemStack i4 = new ItemStack(Material.POTION);
 				break;
 			case STOMPER:
 				ItemStack i2 = new ItemStack(Material.IRON_BOOTS);
@@ -78,17 +81,18 @@ public class InteractOpen extends KitMain implements Listener {
 	public void KitSelector(InventoryClickEvent e) {
 		Player p = (Player) e.getWhoClicked();
 		if(e.getClickedInventory().getTitle().equalsIgnoreCase("§2Seus Kits")) {
-			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§3Default") ) {
+			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Default") ) {
 				addKit(p, KitType.DEFAULT);
 			}
-			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§2Stomper")) {
+			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Stomper")) {
 				addKit(p, KitType.STOMPER);
 			}
-			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§3Dilma")) {
+			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Dilma")) {
 				addKit(p, KitType.DILMA);
 			}
 			e.setCancelled(true);
 			p.closeInventory();
+			p.sendMessage(ChatColor.YELLOW + "[Habilidade] Voce selecionou a habilidade " + kitsnome().get(p));
 		}
 	}
 

@@ -29,7 +29,6 @@ public class JoinLeave extends KitMain implements Listener {
 		i.setItemMeta(meta);
 		p.getInventory().setItem(1, i);
 		kitsnome().put(p, "Nenhum");
-		getSeguencia().put(p, 0);
 		Score.build(p);
 	}
 		

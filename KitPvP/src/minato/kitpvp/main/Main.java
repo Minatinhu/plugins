@@ -5,9 +5,11 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import minato.kitpvp.main.comandos.Ping;
+import minato.kitpvp.main.eventos.Drop;
 import minato.kitpvp.main.eventos.InteractOpen;
 import minato.kitpvp.main.eventos.JoinLeave;
 import minato.kitpvp.main.eventos.Jump;
+import minato.kitpvp.main.eventos.Respown;
 import minato.kitpvp.main.eventos.SoupEvent;
 import minato.kitpvp.main.habilidades.Dilma;
 import minato.kitpvp.main.habilidades.Stomper;
@@ -27,7 +29,9 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new InteractOpen(), this);
 		getServer().getPluginManager().registerEvents(new SoupEvent(), this);
 		getServer().getPluginManager().registerEvents(new Jump(), this);
-
+		getServer().getPluginManager().registerEvents(new Respown(), this);
+		getServer().getPluginManager().registerEvents(new Drop(), this);
+		
 		// Kits
 		getServer().getPluginManager().registerEvents(new Stomper(), this);
 		getServer().getPluginManager().registerEvents(new Dilma(), this);
