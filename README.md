@@ -1,3 +1,3 @@
 # plugins
 
-Direito Reservado a equipe Rede Get
+Direito Reservado a equipe XPlayNetWork
